@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    background-image: url(forest-back.jpeg);
+    background-size: cover; 
+    /* background-color: #00eeff; */
+}
+
+.container h1{
+    position: absolute;
+    right: 50%;
+    /* transform: translateY(-100%); */
+    top: 5%;
+    color: #af8f00;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.hilka-description{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    font-weight: bold;
+    font-size: 20px;
+}
