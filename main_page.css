@@ -16,6 +16,8 @@
     background-color: #fbff11;
 }
 .menu {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
     padding: 0;
     position: absolute;
@@ -91,6 +93,8 @@
     height: 100%;
 }
 .text-x{
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
     right: 3%;
     transform: translateY(-100%);
@@ -100,8 +104,9 @@
     font-size: 36px;
 }
 .text-y{
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 0;
-
     left: 3%;
     position: absolute;
     color:green;
@@ -110,6 +115,8 @@
 }
 
 .text-for-1{
+    display: flex;
+    flex-wrap: wrap;
     left: 5%;
     position: absolute;
     font-weight: bold;
@@ -119,6 +126,8 @@
 }
 
 .text-for-6{
+    display: flex;
+    flex-wrap: wrap;
     right:2%;
     position: absolute;
     font-weight: bold;
