@@ -2,7 +2,68 @@
 <html>
 <head>
     <title>Layout Example</title>
-    <link rel="stylesheet" href="main_grid_page.css">
+    <style>
+        
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.upper-block, .lower-side, .left-side, .center-section, .left-blocks, .content-block {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.upper-block {
+    background-color: #5bab52;
+}
+
+.lower-side {
+    width: 30%;
+    background-color: #44753f;
+}
+
+.right-side {
+    background-color: #1a491f;
+}
+
+.left-side {
+    width: 70%;
+    background-color: #46a7de;
+}
+
+.left-upper-block, .left-bottom-block, .bottom-block {
+    background-color: #5faf6b;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 4%;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.text-x, .text-y, .text-for-1, .text-for-6, .buy-ol, .content-block label {
+    position: relative;
+}
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -13,7 +74,7 @@
                 Може брати любі айтеми бо крутий.<br>
                 І взагалі красавчік геній.
             </div>
-            <h1 class="text-x">GRID TREANT ATTACKER</h1>
+            <h1 class="text-x">EMAIL TREANT ATTACKER</h1>
         </div>
         <div class="lower-side">
             <div class="left-side">
@@ -21,18 +82,15 @@
                     <div class="left-blocks">
                         <div class="left-upper-block">
                             <label>ДРУГ</label>
-                            <img src="friend.png" width="100%" height="90%">
+                            <img src="https://i.ibb.co/Kh5pRW5/friend.png" width="100%" height="90%">
                         </div>
                         <div class="left-bottom-block">
                             <label>ВОРОГ</label>
-                            <img src="opp.png" width="100%" height="90%">
+                            <img src="https://i.ibb.co/3cPP6Zb/opp.png" width="100%" height="90%">
                         </div>
                     </div>
                     <div class="content-block">
-                        <div class="tenor-gif-embed" data-postid="22101422" data-share-method="host" data-aspect-ratio="1.77778" >
-                            <a href="https://tenor.com/view/treant-dota-run-cant-escape-gif-22101422">Treant Dota GIF</a>
-                            <!-- from <a href="https://tenor.com/search/treant-gifs">Treant GIFs</a> -->
-                        </div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                        <img src="https://i.ibb.co/hHxgL1p/treant-dota.gif" title="treant-gif" width="100%" height="100%"/>
                     </div>
                 </div>
                 <div class="bottom-block">
@@ -47,13 +105,12 @@
             <div class="right-side">
                 <ul class="menu">
                     <li><a href="main_page.html">1.ГОЛОВНА(FLEX)</a></li>
-                    <li><u>1-1.ГОЛОВНА(GRID)</u></li>
+                    <li><a href="main_grid_page.html">1-1.ГОЛОВНА(GRID)</a></li>
                     <li><a href="main_block_page.html">1-2.ГОЛОВНА(BLOCK)</a></li>
                     <li><a href="build_page.html">2.БІЛД</a></li>
                     <li><a href="photo_page.html">3.ФОТО</a></li>
                     <li><a href="buy_page.html">4.ФЬОРСТ БАЙ</a></li>
                     <li><a href="counter_page.html">5.КОНТР ПІКІ</a></li>
-                    <li><a href="main_block_page_lab5.html">6. 5-ТА ЛАБОРАТОРНА</a></li>
                 </ul>
             </div>
         </div>

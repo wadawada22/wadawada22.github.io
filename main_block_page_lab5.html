@@ -1,0 +1,242 @@
+<html>
+<head>
+    <title>Layout Example</title>
+    <link rel="stylesheet" href="main_block_page_lab5.css">
+</head>
+
+<div class="container">
+    <div class="block" id="upper-block" ondblclick="editContent('upper-block')">
+        <div class="text-for-1">
+        Трент - найсильніший герой у грі Dota2,<br>
+        він може йти на будь-яку позицію бо він мужик.<br>
+        Може брати любі айтеми бо крутий.<br>
+        І взагалі красавчік геній.
+        </div>
+        <h1 id="text-x" class="text-x" onclick="swapContent('text-x')">JS TREANT ATTACKER</h1>
+    </div>
+    <div class="block" id="lower-side">
+        <div class="block" id="left-side">
+            <div class="block" id="center-section">
+                <div class="block" id="left-blocks">
+                    <div class="block" id="left-upper-block">
+                        <label for="colorInput">Enter background color:</label>
+                        <input type="text" id="colorInput">
+                        <img src="friend.png" width="100%" height="76%">
+                    </div>
+                    <div class="block" id="left-bottom-block">
+                        <label>ВОРОГ</label>
+                        <img src="opp.png" width="100%" height="85%">
+                    </div>
+                </div>
+                <div class="block" id="content-block">
+                    <div class="block" id="content-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="block" id="bottom-block" ondblclick="editContent('bottom-block')">
+                <h1 id="text-y" class="text-y" onclick="swapContent('text-y')">Трент ЧЕРЕЗ РАПІРУ</h1>
+                    <div class="text-for-6">Історія: Далеко на заході, в горах, що лежать за Долиною віщунів, лежать залишки стародавньої сили,<br>
+                    дещиці первозданної енергії, що проростає глибоко у високогірних лісах. Кажуть, що те, що там росте - росте дивно.<br>
+                    Це місце святе для сил природи, і його тримають прихованим і недоступним. Незліченні пастки й небезпеки, що вкривають ту землю, -<br>
+                    всепоглинаючі трави, змішані тварини та отруйні квіти - але немає серед них нічого настільки ж грізного, як могутні енти-захисники.
+                </div>
+            </div>
+        </div>
+        <div class="block" id="right-side">
+        <ul class="menu">
+            <li><a href="main_page.html">1.ГОЛОВНА(FLEX)</a></li>
+            <li><a href="main_grid_page.html">1-1.ГОЛОВНА(GRID)</a></li>
+            <li><a href="main_block_page.html">1-2.ГОЛОВНА(BLOCK)</a></li>
+            <li><a href="build_page.html">2.БІЛД</a></li>
+            <li><a href="photo_page.html">3.ФОТО</a></li>
+            <li><a href="buy_page.html">4.ФЬОРСТ БАЙ</a></li>
+            <li><a href="counter_page.html">5.КОНТР ПІКІ</a></li>
+            <li><u>6. 5-ТА ЛАБОРАТОРНА</u></li>
+        </ul>
+        </div>
+    </div>
+    
+    
+<script>//#1
+    function swapContent(elementId) { 
+          
+        var textX = document.getElementById("text-x");
+        var textY = document.getElementById("text-y");
+    
+        if (elementId === "text-x") {
+            var temp = textX.innerHTML;
+            textX.innerHTML = textY.innerHTML;
+            textY.innerHTML = temp;
+        } else if (elementId === "text-y") {
+            var temp = textY.innerHTML;
+            textY.innerHTML = textX.innerHTML;
+            textX.innerHTML = temp;
+        }
+    } //
+</script>
+
+<script> //#2
+    function circleArea(isOnly){
+        var radius = 5;
+        var contentBlock = document.getElementById("content-wrapper");
+        var area = calculateCircleArea(radius);
+        function calculateCircleArea(radius) {
+            return Math.PI * Math.pow(radius, 2);
+        }
+        if(!isOnly){
+            contentBlock.innerHTML += "<br>Площа кола з радіусом " + radius + " дорівнює: " + area.toFixed(2);
+        }
+        else
+        {
+            contentBlock.innerHTML = "<br>Площа кола з радіусом " + radius + " дорівнює: " + area.toFixed(2);
+        }
+    }
+    //
+</script>
+
+<script> //#3
+    function calculateMaxNumber() {
+
+      var numbersInput = document.getElementById("numbers").value;
+      var numbersArray = numbersInput.split(",").map(Number);
+
+      if (numbersArray.length === 10) {
+        var maxNumber = Math.max(...numbersArray);
+        var countMax = numbersArray.filter( x => x==maxNumber).length;
+        alert("Максимальне число: " + maxNumber + " , його кількість: " + countMax);
+        document.cookie = "maxNumbers=" + countMax;
+        //document.getElementById("content-wrapper").style.display = "none";
+        circleArea(true)
+      } else {
+        alert("Будь ласка, введіть саме 10 чисел, розділених комами.");
+      }
+    }
+
+    window.onload = function() {
+      var maxNumberCookie = getCookie("maxNumbers");
+      if (maxNumberCookie) {
+        var userResponse = confirm("Збережена кількість макс. чисел: " + maxNumberCookie + "\nБажаєте видалити?");
+        
+        if (userResponse) {
+          eraseCookie("maxNumbers");
+          location.reload();
+        } else {
+          alert("Присутні cookies. Перезавантажне сторінку якщо бажаєте скористатись нею знов.");
+          //document.getElementById("content-wrapper").style.display = "none";
+          circleArea(true);
+        }
+      }
+      else{
+        var contentBlock=document.getElementById("content-wrapper");
+        contentBlock.innerHTML="<form id='numberForm'><label for='numbers'>Введіть 10 чисел (розділяючи їх комою):</label><br><input type='text' id='numbers' name='numbers'>    <button type='button' onclick='calculateMaxNumber()'>Розрахувати кількість макс. чисел</button></form>"
+        circleArea(false);
+      }
+    };
+
+    function getCookie(cookieName) {
+      var name = cookieName + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var cookieArray = decodedCookie.split(';');
+
+      for(var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i].trim();
+        if (cookie.indexOf(name) === 0) {
+          return cookie.substring(name.length, cookie.length);
+        }
+      }
+
+      return null;
+    }
+    function eraseCookie(name) {   
+        document.cookie = name+'=; Max-Age=-99999999;';  
+    } //
+</script>
+
+<script> //#4
+    function handleColorChange() {
+      var colorInput = document.getElementById("colorInput").value;
+      if (/^#[0-9A-Fa-f]{6}$/.test(colorInput)) {
+
+        var leftUpperBlock = document.getElementById("left-upper-block");
+        leftUpperBlock.style.backgroundColor = colorInput;
+
+        localStorage.setItem("backgroundColor", colorInput);
+      } else {
+        alert("Введено неправильний колір, спробуйте знов у форматі #RRGGBB .");
+      }
+    }
+
+    var colorInput = document.getElementById("colorInput");
+    colorInput.addEventListener("blur", handleColorChange);
+
+    var savedColor = localStorage.getItem("backgroundColor");
+    if (savedColor) {
+
+      var leftUpperBlock = document.getElementById("left-upper-block");
+      leftUpperBlock.style.backgroundColor = savedColor;
+
+      colorInput.value = savedColor;
+    }
+//
+</script>
+
+<script> //#5
+  function editContent(blockId) {
+    var block = document.getElementById(blockId);
+    var originalContent = block.innerHTML;
+
+    //кнопки та текст/html
+    block.innerHTML = `<textarea id="${blockId}-textarea">${originalContent}</textarea><br>
+                       <button onclick="saveContent('${blockId}')">Зберегти зміни</button> 
+                       <button onclick="deleteContent('${blockId}')">Видалити зміни</button>`;
+
+    document.getElementById(`${blockId}-textarea`).focus();
+  }
+
+  function saveContent(blockId) {
+    var block = document.getElementById(blockId);
+    var textarea = document.getElementById(`${blockId}-textarea`);
+    var newContent = textarea.value;
+
+    localStorage.setItem(blockId, newContent);
+
+    block.innerHTML = newContent;
+    block.style.backgroundColor = getRandomColor();
+  }
+
+  function deleteContent(blockId) {
+    localStorage.removeItem(blockId);
+    var block = document.getElementById(blockId);
+    block.innerHTML = localStorage.getItem(blockId + "-original");
+    block.style.backgroundColor = "";
+  }
+
+  //random колір
+  function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  for (var i = 1; i <= 2; i++) {
+    var blockId = (i === 1) ? "upper-block" : "bottom-block";
+    var block = document.getElementById(blockId);
+    var originalContent = localStorage.getItem(blockId);
+
+    localStorage.setItem(blockId + "-original", block.innerHTML);
+
+    if (originalContent) {
+      block.innerHTML = originalContent;
+      block.style.backgroundColor = getRandomColor();
+    }
+  }
+</script>
+
+</div>
+    
+</body>
+</html>
