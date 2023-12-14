@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Layout Example</title>
+    <link rel="stylesheet" href="main_block_page_lab6.css">
+</head>
+
+<div class="container">
+    <div class="block" id="upper-block">
+        <div class="text-for-1">
+        Трент - найсильніший герой у грі Dota2,<br>
+        він може йти на будь-яку позицію бо він мужик.<br>
+        Може брати любі айтеми бо крутий.<br>
+        І взагалі красавчік геній.
+        </div>
+        <h1 class="text-x">BLOCK TREANT ATTACKER</h1>
+    </div>
+    <div class="block" id="lower-side">
+        <div class="block" id="left-side">
+            <div class="block" id="center-section">
+                <div class="block" id="left-blocks">
+                    <div class="block" id="left-upper-block">
+                        <label>ДРУГ</label>
+                        <img src="friend.png" width="100%" height="85%">
+                    </div>
+                    <div class="block" id="left-bottom-block">
+                        <label>ВОРОГ</label>
+                        <img src="opp.png" width="100%" height="85%">
+                    </div>
+                </div>
+                <div class="block" id="content-block">
+                    <?php
+                        $accordionData = file_get_contents('accordion_data.json');
+                        $accordionConfig = json_decode($accordionData, true);
+
+                        echo "<div id='accordion'>";
+                        for ($i = 1; $i <= $accordionConfig['numElements']; $i++) {
+                            echo "<div>Element $i: {$accordionConfig['element'.$i]}</div>";
+                        }
+                        echo "</div>";
+                    ?>
+
+                    <script src="display.js"></script>
+                </div>
+            </div>
+            <div class="block" id="bottom-block">
+                <h1 class="text-y">Трент ЧЕРЕЗ РАПІРУ</h1>
+                    <div class="text-for-6">Історія: Далеко на заході, в горах, що лежать за Долиною віщунів, лежать залишки стародавньої сили,<br>
+                    дещиці первозданної енергії, що проростає глибоко у високогірних лісах. Кажуть, що те, що там росте - росте дивно.<br>
+                    Це місце святе для сил природи, і його тримають прихованим і недоступним. Незліченні пастки й небезпеки, що вкривають ту землю, -<br>
+                    всепоглинаючі трави, змішані тварини та отруйні квіти - але немає серед них нічого настільки ж грізного, як могутні енти-захисники.
+                </div>
+            </div>
+        </div>
+        <div class="block" id="right-side">
+        <ul class="menu">
+            <li><a href="main_page.html">1.ГОЛОВНА(FLEX)</a></li>
+            <li><a href="main_grid_page.html">1-1.ГОЛОВНА(GRID)</a></li>
+            <li><u>1-2.ГОЛОВНА(BLOCK)</u></li>
+            <li><a href="build_page.html">2.БІЛД</a></li>
+            <li><a href="photo_page.html">3.ФОТО</a></li>
+            <li><a href="buy_page.html">4.ФЬОРСТ БАЙ</a></li>
+            <li><a href="counter_page.html">5.КОНТР ПІКІ</a></li>
+            <li><a href="main_block_page_lab5.html">6. 5-ТА ЛАБОРАТОРНА</a></li>
+            <li><a href="main_block_page_lab6-1.html">ЛАБ. 6-1. НАЛАШТУВАННЯ АКОРДІОНУ</a></li>
+            <li><u>ЛАБ. 6-2. АКОРДІОН</u></li>
+        </ul>
+        </div>
+    
+
+</div>
+    
+</body>
+</html>

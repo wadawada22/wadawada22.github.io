@@ -1,0 +1,174 @@
+.container{
+    height: 100vh;
+}
+.block {
+    display: block;
+    
+}
+
+#upper-block {
+    width: 100%; 
+    height: 20%; 
+    background-color: #5bab52;
+    position: relative;
+}
+
+#lower-side {
+    width: 100%; 
+    height: 80%; 
+    background-color: #44753f;
+}
+
+#left-side{
+    width: 70%;
+    height: 100%;
+    background-color: aqua;
+    float:left;
+}
+#right-side{
+    width: 30%;
+    height: 100%;
+    background-color: #1a491f;
+    float: right;
+    position: relative;
+}
+#center-section{
+    width: 100%;
+    height: 60%;
+    background-color: azure;
+}
+#bottom-block{
+    width: 100%;
+    height: 40%;
+    background-color: #5faf6b;
+    position: relative;
+}
+#left-blocks{
+    width: 30%;
+    height: 100%;
+    background-color: aliceblue;
+    float: left;
+}
+#content-block{
+    width:70%;
+    height:100%;
+    background-image: url(forest-back.jpeg);
+    background-size: cover;
+    float: right;
+    font-weight: bold;
+    font-size: 30px;
+    overflow: auto;
+}
+#content-wrapper{
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+#left-upper-block{
+    width: 100%;
+    height: 50%;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #46a7de;
+}
+#left-bottom-block{
+    width:100%;
+    height:50%;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: rgb(213, 80, 38);
+    color: white;
+}
+.menu {
+    list-style-type: none;
+    padding: 0;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+
+  .menu li {
+    margin-bottom: 4%;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+  }
+
+.text-x{
+    position: absolute;
+    right: 3%;
+    transform: translateY(-100%);
+    top: 50%;
+    color: #000000;
+    font-weight: bold;
+    font-size: 36px;
+}
+.text-y{
+    margin-top: 0;
+
+    left: 3%;
+    position: absolute;
+    color:green;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.text-for-1{
+    left: 5%;
+    position: absolute;
+    font-weight: bold;
+    font-size: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text-for-6{
+    right:2%;
+    position: absolute;
+    font-weight: bold;
+    text-align: right;
+    font-size: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.buy-ol{
+    list-style-type: armenian;
+    left: 10%;
+    top: 10%;
+}
+
+.buy-ol li{
+    margin-bottom: 0%;
+    font-weight: bold; 
+    font-size: 20px;
+    color: rgb(255, 0, 200);
+}
+
+.content-block label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aqua;
+    font-weight: bold;
+    font-size: 25px;
+    right: 50%;
+}
+
+.buy-ol li img{
+    width: 10%;
+    height: 10%;
+}
+
+.accordionForm{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.accordionElements{
+    font-size: 24px;
+}
